@@ -4,7 +4,7 @@
 head=0;
 tail=0;
 
-while true
+while [ $head -lt 21 ] && [ $tail -lt 21  ]
 do
   result=$(($RANDOM%2));
   if [ $result == 1 ]
@@ -16,5 +16,10 @@ do
   fi
 done
 
-echo "Head count = $head";
-echo "tail count = $tail";
+if [ $head == 21 ]
+then
+  echo "Head won with count $head";
+else
+  echo "Tail won with count $tail" ;
+fi
+
